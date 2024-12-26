@@ -64,9 +64,13 @@ if 'view_type' not in st.session_state:
 
 if st.session_state.view_type == 'preview':
     st.title("Blue Print")
-    single_print(content_info)
-    single_print(content_info_2)
-    single_print(content_info_3)
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        single_print(content_info)
+    with col2:
+        single_print(content_info_2)
+    with col3:
+        single_print(content_info_3)
 else:
     if "current_content_key" in st.session_state:
         print_detail(st.session_state.current_content_key)

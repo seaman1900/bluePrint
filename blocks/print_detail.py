@@ -1,6 +1,9 @@
 # 详情页
 import streamlit as st
 import datetime
+import pandas as pd
+
+from .ad_module import ad_banner
 
 # 初始化评论列表
 if 'comments' not in st.session_state:
@@ -61,15 +64,30 @@ def comments(comments_info=None):
     st.button("load more")
 # 资金池
 def fund_pool():
-    st.subheader("💰 资金池")
-    st.markdown("当前资金池: :green-background[$100]")
-    st.button("查看明细")
+    with st.container(border=True):
+        st.subheader("💰 资金池")
+
+        test_sale_data = pd.DataFrame([10,20,33,44,55,343])
+        st.line_chart(test_sale_data)
+
+        test_data = pd.DataFrame([[10,20,30,40],[100,200,300,500],[1000,2000,3000,4000],[15,200,500,220]], columns=['热度购买','修缮资金','广告收入','转载收入'])
+        st.area_chart(test_data, stack=True)
 
 # 工作区
 def workspace():
     # 用于记录为该内容做出贡献的人
-    st.subheader("👥 贡献者")
-    st.markdown("rex 于 2024-10-25 10:20:10 提交了法语翻译内容 获得了奖励: :green-background[$10]")
+    with st.container(border=True):
+        st.subheader("👥 贡献者")
+        st.markdown(":red-background[rex] 于 2024-10-25 10:20:10 提交了法语翻译内容 获得了奖励: :green-background[$10]")
+        st.markdown(":red-background[fan] 于 2024-10-25 10:30:15 提交了修改建议 获得了奖励: :green-background[$20]")
+        st.markdown(":red-background[qaq] 于 2024-10-25 10:30:15 提交了修改建议 获得了奖励: :green-background[等待分配]")
+
+# 广告展示
+def ad_show():
+    with st.container(border=True):
+        st.subheader("📣 赞助商")
+        st.write("赞助商一 赞助商二 ... 后面用icon来代替")
+        ad_banner()
 
 # 投资方式
 def invest_bar():
@@ -79,11 +97,8 @@ def invest_bar():
     col3.button("投放广告")
     col4.button("申请转载")
 
-def print_detail(content_key):
-    st.set_page_config("detail", layout="wide")
-    
+def print_detail(content_key):    
     empty, col1, col2 = st.columns([1,3,2], vertical_alignment='top')
-    
     with col1:
         st.title("Hello World")
         if st.button("back", key="back", icon=':material/arrow_back:', type='tertiary'):
@@ -95,6 +110,7 @@ def print_detail(content_key):
         comments()
         
     with col2:
-        st.header("📊 数据统计")
+        st.header("数据统计")
         workspace()
         fund_pool()
+        ad_show()

@@ -7,12 +7,21 @@ def init_states():
 
 
 if __name__ == "__main__":
-    st.title("Welcome to Farm👋")
-    # 两个主要内容：付费平台、社区治理
-    col1, col2 = st.columns(2)
-    with col1:
-        st.header("付费平台")
-        st.write("付费平台")
-    with col2:
-        st.header("社区治理")
-        st.write("社区治理")
+    st.set_page_config("bluePrint", layout="wide")
+    st.title("Welcome to BluePrint")
+    # 居中显示
+    st.markdown("<h1 style='text-align: center;'>Make Everything Valuable</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center;'>article, image, video, code...</p>", unsafe_allow_html=True)
+
+    # 当前状态展示
+
+    st.subheader("what is bluePrint?")
+    st.caption("在bluePrint分享您的优质内容, 获得多元化的收益, 弥补开源之殇的一块拼图")
+    st.subheader("内容变现")
+    st.caption("发布Print, 它将是您最直接的收入来源")  # 后续可以引进佣金系统，推广的人可以分得一部分
+    st.subheader("版权保护")
+    st.caption("转载收费, 保护原创")
+    st.subheader("社区自治")
+    st.caption("用户自治, 驱逐低质内容, 删除引战言论")
+    st.subheader("多样投资")
+    st.caption("投资您喜欢的Print, 获得收益分红") # 投资方式多元化，直接对口
