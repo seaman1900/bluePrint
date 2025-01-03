@@ -1,3 +1,5 @@
+# 这个版本可以使用其他账户登录，比较正式，先用一个简陋的版本代替
+
 import streamlit as st
 import streamlit_authenticator as stauth
 

@@ -1,0 +1,58 @@
+{
+    "user_id": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+    "username": "Rex",
+    "email": "rex@example.com",
+    "password_hash": "hashed_password_here",
+    "registration_date": "2022-01-01T00:00:00Z",
+    "last_login": "2023-10-01T12:34:56Z",
+    "is_admin": true,
+    "roles": ["admin", "content_creator"],
+    "permissions": ["create_content", "delete_content", "manage_users"],
+    "avatar_url": "https://cdn.img2ipfs.com/ipfs/QmQKq7c7jmmZpPjof7gmUQhjBoScYmD3KUW73Wj7eJtcEY?filename=myxj.jpg",
+    "balance": 10,
+    "profile": {
+        "description": "I am a blockchain developer.",
+        "location": "New York, USA",
+        "website": "https://rex.com",
+        "bio": "Passionate about blockchain and decentralized technologies."
+    },
+    "shop_list": [
+        {
+            "content_id": "001",
+            "added_time": "2022-01-01T00:00:00Z"
+        }
+    ],
+    "mark_list": [
+        {
+            "content_id": "001",
+            "added_time": "2022-01-01T00:00:00Z"
+        }
+    ],
+    "payment_methods": ["Alipay", "WechatPay", "BankCard"],
+    "investments": [
+        {
+            "invest_id": "001",
+            "invest_amount": 1000,
+            "invest_time": "2022-01-01T00:00:00Z",
+            "invest_type": "ad",
+            "profit": 0
+        }
+    ],
+    "orders": [
+        {
+            "order_id": "001",
+            "order_amount": 1000,
+            "order_time": "2022-01-01T00:00:00Z",
+            "order_status": "paid",
+            "payment_method": "Alipay"
+        }
+    ],
+    "metadata": {
+        "user_level": "vip",
+        "points": 1000,
+        "preferences": {
+            "language": "en",
+            "theme": "dark"
+        }
+    }
+}

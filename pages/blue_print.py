@@ -59,6 +59,10 @@ content_info_3 = {
     "preview_key": "preview3",
 }
 
+st.session_state.page = "blue_print"
+if st.session_state.get("page") == "blue_print":
+    st.set_page_config(layout='wide')
+
 if 'view_type' not in st.session_state:
     st.session_state.view_type = 'preview'
 

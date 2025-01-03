@@ -7,7 +7,9 @@ def init_states():
 
 
 if __name__ == "__main__":
-    st.set_page_config("bluePrint", layout="wide")
+    st.session_state.page = "home"
+    if st.session_state.get("page")=="home":
+        st.set_page_config(layout="wide")
     st.title("Welcome to BluePrint")
     # 居中显示
     st.markdown("<h1 style='text-align: center;'>Make Everything Valuable</h1>", unsafe_allow_html=True)

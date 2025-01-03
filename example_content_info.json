@@ -1,0 +1,20 @@
+{
+    "content_id": "0001",
+    "title": "hello world",
+    "author_id": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+    "created_at": "2022-12-12T12:00:00Z",
+    "price": 0.1,
+    "description": "hello world, fucking code",
+    "content_body": "hello world, fucking code",
+    "metadata": {
+        "views": 100000,
+        "comments": 224,
+        "likes": 1200,
+        "dislikes": 12,
+        "shares": 500
+    },
+    "pricing_type": "free",
+    "tags": ["funny", "code"],
+    "comments": ["12345", "67890"],
+    "status": "approved"
+}
