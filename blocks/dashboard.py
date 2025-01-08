@@ -1,26 +1,27 @@
 # 展示数据
 import streamlit as st
+from models.user import User
 
 def title(text):
     col1, col2 = st.columns([2,4])
     col1.markdown('<h4>'+text+'</h4>',unsafe_allow_html=True)
     col2.divider()
 
-def dashboard(user_info):
+def dashboard(user_info: User):
     col1, col2 = st.columns([2,4])
 
     with col1:
-        st.image(user_info['avatar_url'], width=100)
-        st.subheader(user_info['username'])
-        st.caption(user_info['profile']['description'])
+        st.image(user_info.avatar_url, width=100)
+        st.subheader(user_info.username)
+        st.caption("to be filled")
         st.divider()
 
         st.subheader('待补充')
-        st.caption('follower:100k')
-        st.caption('likes:100k')
-        st.caption('dislikes:100k')
+        st.caption(f'followers:{user_info.metadata.followers}')
+        st.caption(f'likes:{user_info.metadata.likes}')
+        st.caption(f'dislikes:{user_info.metadata.dislikes}')
     with col2:
-        st.markdown('<h3>'+user_info['profile']['bio']+'</h3>', unsafe_allow_html=True)
+        st.markdown('<h3>'+user_info.profile.bio+'</h3>', unsafe_allow_html=True)
         st.divider()
         title("Data Preview")
         # 展示数据

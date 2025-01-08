@@ -1,14 +1,15 @@
 import streamlit as st
 from blocks.auth import login, register
 from blocks.dashboard import dashboard
-import json
+from models.user import User
+
 def app():
     if "is_login" not in st.session_state:
         # 为了测试方便，先设置为True
-        st.session_state.is_login = True
+        st.session_state.is_login = False
     if st.session_state.is_login:
-        with open('example_user_info.json', 'r', encoding='utf-8') as file:
-            user_info = json.load(file)
+        user_dict = st.session_state.user_info
+        user_info = User(**user_dict)
         dashboard(user_info)
     else:
         st.write("Please login or register to access your personal page.")
